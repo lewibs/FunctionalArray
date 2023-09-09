@@ -1,3 +1,8 @@
+# Note to devs
+If you would like to help add functionality please make a fork raise an issue named after the method you're implementing write the method in the correct order that it appears on the list, and add to the automated tests, then make a pr.
+
+Thanks :)
+
 # FunctionalArray
 This is intentionally cursed. I would like to implement an [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). With all the included expected syntax support. 
 
@@ -60,7 +65,3 @@ Of the existing [interface](https://developer.mozilla.org/en-US/docs/Web/JavaScr
 - [ ] FunctionalArray.prototype.unshift()
 - [ ] FunctionalArray.prototype.values()
 - [ ] FunctionalArray.prototype.with()
-
-If you would like to help add functionality please make a fork raise an issue named after the method you're implementing write the method in the correct order that it appears on the list, and add to the automated tests, then make a pr.
-
-Thanks :)
