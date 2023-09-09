@@ -3,22 +3,20 @@ const Index = {
     previus: "previus",
 }
 
+//functional as in it works.
 class FunctionalArray {
     length = 0;
 
     #tail;
 
-    //yea this is technically an array but you cant do 
-    //spread without it and I need to match Array docs
-    //which uses the spread
     constructor(...values) {
         for (let i = 0; i < values.length; i++ ) {
-            this.set(i. values[i]);
+            this.set(i, values[i]);
         }
     }
 
     set(index, value) {
-        const updateIndex = (previus, value) => {
+        const makeIndex = (previus, value) => {
             return function index(returns) {
                 if (returns === Index.previus) {
                     return previus;
@@ -28,31 +26,49 @@ class FunctionalArray {
             }
         }
 
-        const addIndex = (previus, value) => {
-            this.length++;
-            return updateIndex(previus, value);
-        }
-
-        if (index >= this.length) { //adding past the existing chain
+        if (index >= this.length) { // adding
             let add = index - this.length;
 
             for (let i = 0; i < add; i++ ) {
-                this.#tail = addIndex(this.#tail, undefined);
+                this.#tail = makeIndex(this.#tail, undefined);
+                this.length++;
             }
 
-            this.#tail = addIndex(this.#tail, value);
-        } else { // we are adding within the prexisting size of the array
-            //just update the most recent
-            let goback = (this.length - 1) - index;
+            this.#tail = makeIndex(this.#tail, value);
+            this.length++;
+        } else { // updating
+            if (index === this.length - 1) { //replacing tail easier then fixing the edge case in the else
+                this.#tail = makeIndex(this.#tail(Index.previus), value);
+            } else {
+                const trueTail = this.#tail;
+                let goback = (this.length) - index;
 
-            let previus = this.#tail(Index.previus);
+                {// for the replacement
+                    let previus = trueTail;
 
-            for (let backcount = 0 ; backcount < goback; backcount++) {
-                previus = previus(Index.previus);
+                    for (let backcount = 0 ; backcount < goback; backcount++) {
+                        previus = previus(Index.previus);
+                    }
+        
+                    this.#tail = makeIndex(previus, value);
+
+                    goback--;
+                }
+
+                //for updating the previus refs
+                do {
+                    let current = trueTail;
+
+                    for (let backcount = 0 ; backcount < goback; backcount++) {
+                        value = current(Index.value);
+                        current = current(Index.previus);
+                    }
+        
+                    this.#tail = makeIndex(this.#tail, value);
+
+                    goback--;
+                } while (goback > 0);
             }
-
-            const trueTail = this.#tail;
-            this.#tail = updateIndex(previus, value);
         }
     }
 
@@ -77,6 +93,25 @@ class FunctionalArray {
         }
 
         return value;
+    }
+
+    toString() {
+        let current = this.#tail;
+        let string = '';
+
+        while(current) {
+            let value = current(Index.value);
+
+            string = ((value !== undefined && value !== null) ? value : "") + "," + string;
+
+            current = current(Index.previus);
+        }
+
+        if (string.endsWith(',')) {
+            return string.substring(0, string.length - 1);
+        }
+
+        return string;
     }
 }
 

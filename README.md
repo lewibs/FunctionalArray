@@ -61,7 +61,7 @@ Of the existing [interface](https://developer.mozilla.org/en-US/docs/Web/JavaScr
 - [ ] FunctionalArray.prototype.toReversed()
 - [ ] FunctionalArray.prototype.toSorted()
 - [ ] FunctionalArray.prototype.toSpliced()
-- [ ] FunctionalArray.prototype.toString()
+- [x] FunctionalArray.prototype.toString()
 - [ ] FunctionalArray.prototype.unshift()
 - [ ] FunctionalArray.prototype.values()
 - [ ] FunctionalArray.prototype.with()
