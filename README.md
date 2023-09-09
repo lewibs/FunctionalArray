@@ -12,7 +12,7 @@ The following morning he rushed to his professor "I am enlightened now because o
 
 The master rapped Anton on the head with his ruler and went to town on his knuckles "YOU FOOLISH BOY! This is not at all what I meant! You have no right to write code with these hands! YOU CAN DO THINGS FAR BETTER IF YOU JUST.... GAHHHH!!!!. Why did I take you in as my student! This is just a linked list you ding dong use your languages standard library for this!"
 
-And with that the Pupil learned of the risk of enlightenment and vowed never to touch a computer again.
+And with that the pupil learned of the risk of enlightenment and vowed never to touch a computer again.
 
 [original article](http://people.csail.mit.edu/gregs/ll1-discuss-archive-html/msg03277.html)
 
