@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "FunctionalArray",
   "version": "1.0.0",
   "description": "This is an array but it does not use an array to be an array",
   "main": "./src/FunctionalArray.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lewibs/node-template.git"
+    "url": "git+https://github.com/lewibs/FunctionalArray.git"
   },
   "keywords": [
     "template"
@@ -18,9 +18,9 @@
   "author": "lewibs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lewibs/node-template/issues"
+    "url": "https://github.com/lewibs/FunctionalArray/issues"
   },
-  "homepage": "https://github.com/lewibs/node-template#readme",
+  "homepage": "https://github.com/lewibs/FunctionalArray#readme",
   "devDependencies": {
     "jest": "^29.5.0"
   }
