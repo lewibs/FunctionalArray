@@ -1,5 +1,5 @@
 {
-  "name": "FunctionalArray",
+  "name": "functionalarray",
   "version": "1.0.0",
   "description": "This is an array but it does not use an array to be an array",
   "main": "./src/FunctionalArray.js",
